@@ -1,10 +1,10 @@
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
-import { User } from '../model/User.js';
-
-
+import { User } from '../Model/User.js';
 import dotenv from 'dotenv';
 dotenv.config();
+
+
 const jwt_secret = process.env.JWT_SECRET;
 const cookie_name = process.env.COOKIE_NAME;
 
@@ -12,11 +12,10 @@ const cookie_name = process.env.COOKIE_NAME;
 
 const COOKIE_OPTIONS = {
   httpOnly: true,
-  secure: false,       // true in production with HTTPS
-  sameSite: 'lax',          // optional but safe
+  secure: true,       // true in production with HTTPS
+  sameSite: 'none',          // optional but safe
   maxAge: 1000 * 60 * 60 * 24 * 7,  // 7 days
 };
-
 
 
 export const signup = async (req, res) => {

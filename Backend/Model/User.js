@@ -28,5 +28,7 @@ const userSchema = new mongoose.Schema({
   }
 });
 
-const User = mongoose.model('User', userSchema);
+// ✅ Prevent re-definition error
+const User = mongoose.models.User || mongoose.model('User', userSchema);
+
 export { User };
