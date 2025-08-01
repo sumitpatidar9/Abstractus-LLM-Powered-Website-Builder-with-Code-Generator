@@ -12,8 +12,8 @@ const cookie_name = process.env.COOKIE_NAME;
 
 const COOKIE_OPTIONS = {
   httpOnly: true,
-  secure: false,       // true in production with HTTPS
-  sameSite: 'lax',          // optional but safe
+  secure: true,       // true in production with HTTPS
+  sameSite: 'none',          // optional but safe
   maxAge: 1000 * 60 * 60 * 24 * 7,  // 7 days
 };
 
