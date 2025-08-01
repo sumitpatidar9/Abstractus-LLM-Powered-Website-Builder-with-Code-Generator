@@ -9,8 +9,6 @@ const cookieName = process.env.COOKIE_NAME;
 export const verifyUser = async (req, res, next) => {
   try {
     const token = await req.cookies[cookieName];
-    console.log(token);
-    console.log(token);
 
     if (!token) return res.status(401).json({ message: "No token provided" });
 
