@@ -17,7 +17,7 @@ const Login = () => {
     try {
       const res = await login(form.email, form.password);
       if (res?.user) {
-        navigate('/chat');
+        navigate('/dashboard');
       }
     } catch (error) {
       console.error("Login failed", error);
